@@ -257,7 +257,7 @@ namespace rotoUSB
         private void CloseReadTask()
         {
             Console.WriteLine("Close USB Read Task");
-            if (_usbDeviceR != IntPtr.Zero)
+            if (_usbDeviceR != IntPtr.Zero && !_ctsRead.IsCancellationRequested)
             {
                 _ctsRead.Cancel();
                 _ctsRead.Dispose(); // Clean up
