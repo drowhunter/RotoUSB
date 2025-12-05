@@ -9,8 +9,12 @@
 
   <!-- Keep the files as content (None), but custom copy logic will handle placing them in TargetDir -->
   <ItemGroup>
-    <None Include="Libs\x64\HIDApi.dll" />
-    <None Include="Libs\x86\HIDApi.dll" />
+    <None Include="Libs\x64\HIDApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Libs\x86\HIDApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
